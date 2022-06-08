@@ -9,5 +9,6 @@ import (
 func main() {
 	hello := "Hello, OTUS!"
 	reversedHello := stringutil.Reverse(hello)
+
 	fmt.Print(reversedHello)
 }
