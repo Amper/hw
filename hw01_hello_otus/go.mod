@@ -1,4 +1,4 @@
-module github.com/Amper/hw
+module github.com/Amper/hw/hw01_hello_otus
 
 go 1.16
 
