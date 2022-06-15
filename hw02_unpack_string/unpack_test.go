@@ -25,12 +25,6 @@ func TestUnpack(t *testing.T) {
 		{input: "a", expected: "a"},
 		{input: "日本語4", expected: "日本語語語語"},
 		{input: "日本4語", expected: "日本本本本語"},
-		/*
-			The supported alphabet is not clearly indicated in the task conditions.
-			In addition, there are conflicting conditions regarding the support of "\n".
-			Therefore, it is implemented this way, but to support any of the behaviors,
-			it is enough to change only one place and tests.
-		*/
 		{input: "d\n5abc", expected: "d\n\n\n\n\nabc"},
 		{input: "\u65e54\u8a9e", expected: "\u65e5\u65e5\u65e5\u65e5\u8a9e"},
 		{input: "\U000065e5\U00008a9e3", expected: "\U000065e5\U00008a9e\U00008a9e\U00008a9e"},
@@ -54,6 +48,7 @@ func TestUnpackInvalidString(t *testing.T) {
 		"45",
 		"aaa10b",
 		`qwe\`,
+		`qw\ne`,
 		"a45a",
 		"a45",
 	}

@@ -39,7 +39,10 @@ func Unpack(value string) (string, error) {
 }
 
 func processLetter(state *unpackState, result *unpackResult) error {
-	currChar, nextChar := state.CurrChar(), state.NextChar()
+	prevChar, currChar, nextChar := state.Chars()
+	if IsSlash(prevChar) {
+		return newUnpackError(state, fmt.Sprintf("invalid character '%v'", currChar))
+	}
 	if IsDigit(nextChar) {
 		return state.SetLetter(&currChar)
 	}

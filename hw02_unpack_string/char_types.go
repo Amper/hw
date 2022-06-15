@@ -18,8 +18,7 @@ func GetCharType(char rune) CharType {
 	case unicode.IsLetter(char):
 		return CharTypeLetter
 	/*
-		The supported alphabet is not clearly indicated in the task conditions.
-		In addition, there are conflicting conditions regarding the support of "\n".
+		The supported alphabet is not clearly indicated in the task conditions..
 		Therefore, it is implemented this way, but to support any of the behaviors,
 		it is enough to change only one place and tests.
 	*/
